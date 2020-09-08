@@ -7,6 +7,12 @@ root.geometry('1200x800')
 
 backup=[]
 
+days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
+
+hours = ["8:00", "9:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00"]
+
+mats = ["Programmazione", "Elettrotecnica", "Elementi di meccanica teorica ed applicata", "Fisica II"]
+
 columns = {
     "Monday": 0,
     "Tuesday": 1,
@@ -92,10 +98,10 @@ def remove():
     rem_win.title("Remove cells")
     rem_win.geometry("400x200")
     Label(rem_win, text="Select the day").grid(row=0, column=0)
-    combo = ttk.Combobox(rem_win, values=["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"])
+    combo = ttk.Combobox(rem_win, values=days)
     combo.grid(row=1, column=0)
     Label(rem_win, text="Select the time").grid(row=2, column=0)
-    combo2 = ttk.Combobox(rem_win, values=["8:00", "9:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00"])
+    combo2 = ttk.Combobox(rem_win, values=hours)
     combo2.grid(row=3, column=0)
     Button(rem_win, text="Remove", command=lambda: blank_cell(rows[combo2.get()], columns[combo.get()])).grid(row=4, column=0, pady=10)
     Button(rem_win, text="Close window", command=rem_win.destroy).grid(row=5, column=0, pady=10)
@@ -110,13 +116,13 @@ def add():
     add_win.title("Add cells")
     add_win.geometry("400x200")
     Label(add_win, text="Select the day").grid(row=0, column=0)
-    combo = ttk.Combobox(add_win, values=["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"])
+    combo = ttk.Combobox(add_win, values=days)
     combo.grid(row=1, column=0)
     Label(add_win, text="Select the time").grid(row=2, column=0)
-    combo2 = ttk.Combobox(add_win, values=["8:00", "9:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00"])
+    combo2 = ttk.Combobox(add_win, values=hours)
     combo2.grid(row=3, column=0)
     Label(add_win, text="Select the subject").grid(row=4, column=0)
-    combo3 = ttk.Combobox(add_win, values=["Programmazione", "Elettrotecnica", "Elementi di meccanica teorica ed applicata", "Fisica II"])
+    combo3 = ttk.Combobox(add_win, values=mats)
     combo3.grid(row=5, column=0)
     Button(add_win, text="Add", command=lambda: new_cell(rows[combo2.get()], columns[combo.get()], subject[combo3.get()])).grid(row=6, column=0, pady=10)
     Button(add_win, text="Close window", command=add_win.destroy).grid(row=7, column=0, pady=10)
