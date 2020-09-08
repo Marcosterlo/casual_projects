@@ -152,13 +152,11 @@ Button(root, bg="black", borderwidth=5, text="EDIT CELLS", fg="white", relief="g
 # Defining the time column
 
 for i in range(11):
-    Label(root, text=str(i+8) + ":00", borderwidth=5, bg="black", fg="white", relief="groove", padx=10, pady=10).grid(sticky='nwse', row=i+1, column=0)
+    Label(root, text=hours[i], borderwidth=5, bg="black", fg="white", relief="groove", padx=10, pady=10).grid(sticky='nwse', row=i+1, column=0)
 
 # Defining the day row
 
-week = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
-
 for i in range(5):
-    Label(root, text=week[i], borderwidth=5, width=20, bg="black", fg="white", relief="groove", padx=10, pady=10).grid(row=0, column=i+1, sticky='nwse')
+    Label(root, text=days[i], borderwidth=5, width=20, bg="black", fg="white", relief="groove", padx=10, pady=10).grid(row=0, column=i+1, sticky='nwse')
 
 root.mainloop()
