@@ -66,7 +66,7 @@ def auto_resize(window, n_row, n_columns):
 
 def read_backup():
     global backup
-    with open("/home/marco/operative/casual_projects/backup_uni.txt", "r") as f:
+    with open("/home/marco/operative/casual_projects/unipa/backup_uni.txt", "r") as f:
         backup = f.readlines()
     for i in range(11):
         backup[i] = backup[i].rstrip().split(' ')
@@ -78,7 +78,7 @@ def read_backup():
                 Label(root, borderwidth=5, text=text[int(backup[i][k])], bg=color[int(backup[i][k])], relief="groove").grid(row=i+1, column=k+1, sticky='nswe')
 
 def write_backup():
-    with open("/home/marco/operative/casual_projects/backup_uni.txt", "w") as f:
+    with open("/home/marco/operative/casual_projects/unipa/backup_uni.txt", "w") as f:
         for i in range(11):
             f.write(str(' '.join(str(v) for v in backup[i])) + '\n')
 
